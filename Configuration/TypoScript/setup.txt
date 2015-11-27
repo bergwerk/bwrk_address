@@ -1,0 +1,7 @@
+plugin.tx_bwrkaddress {
+    view {
+        partialRootPath = {$plugin.tx_bwrkaddress.view.partialRootPath}
+        templateRootPath = {$plugin.tx_bwrkaddress.view.templateRootPath}
+        layoutRootPath = {$plugin.tx_bwrkaddress.view.layoutRootPath}
+    }
+}

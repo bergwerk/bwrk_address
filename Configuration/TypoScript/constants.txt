@@ -1,0 +1,7 @@
+plugin.tx_bwrkaddress {
+    view {
+        partialRootPath = EXT:bwrk_address/Resources/Private/Partials/
+        templateRootPath = EXT:bwrk_address/Resources/Private/Templates/
+        layoutRootPath = EXT:bwrk_address/Resources/Private/Layouts/
+    }
+}
