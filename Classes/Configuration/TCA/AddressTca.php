@@ -12,7 +12,7 @@ class AddressTca extends Tca
     {
         $configuration = new Configuration();
         $configuration->setExt(Bootstrap::$_extKey);
-        $configuration->setModel('address');
+        $configuration->setModel('tx_bwrkaddress_domain_model_address');
 
         $this->init($configuration);
     }
