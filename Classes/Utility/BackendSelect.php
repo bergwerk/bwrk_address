@@ -17,6 +17,11 @@ class BackendSelect
 
         $parameters['items'][] = $this->pleaseChooseItem();
 
+        if (is_null($types))
+        {
+            return;
+        }
+
         foreach ($types as $key => $type) {
             $parameters['items'][] = array(
                 $type['label'],
