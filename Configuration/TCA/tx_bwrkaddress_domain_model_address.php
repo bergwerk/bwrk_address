@@ -9,6 +9,9 @@ $tcaConfiguration->setIconFile('EXT:bwrk_address/Resources/Public/Icons/Address.
 $tca = new \BERGWERK\BwrkUtility\Utility\Tca\Tca();
 $tca->init($tcaConfiguration);
 
-$tca->addInputField('title', 'Title');
+$tca->addInputField('title', 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:title');
+
+$tca->addTab('tab_references', 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:references');
+$tca->addSysCategoryReferences('categories', 0, 10, 0, 999, 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:categories');
 
 return $tca->createTca();

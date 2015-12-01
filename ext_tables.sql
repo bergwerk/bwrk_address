@@ -9,6 +9,7 @@ CREATE TABLE tx_bwrkaddress_domain_model_address (
   sorting int(11) DEFAULT '0' NOT NULL,
 
   entries varchar(255) DEFAULT '' NOT NULL,
+  categories varchar(255) DEFAULT '' NOT NULL,
 
   title varchar(255) DEFAULT '' NOT NULL,
 

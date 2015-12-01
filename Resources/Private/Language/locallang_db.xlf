@@ -9,6 +9,15 @@
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
                 <source>Address Entry</source>
             </trans-unit>
+            <trans-unit id="title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="references">
+                <source>References</source>
+            </trans-unit>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
