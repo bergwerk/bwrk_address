@@ -3,6 +3,7 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-12-01T08:36:29Z" product-name="bwrk_address">
         <header/>
         <body>
+
             <trans-unit id="tx_bwrkaddress_domain_model_address">
                 <source>Address</source>
             </trans-unit>
@@ -19,12 +20,22 @@
                 <source>Entries</source>
             </trans-unit>
 
+
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
                 <source>Address Entry</source>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_type">
                 <source>Entry Type</source>
             </trans-unit>
+
+
+            <trans-unit id="flexform.Pi1.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi1.foobar">
+                <source>Foobar</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

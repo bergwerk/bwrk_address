@@ -1,6 +1,8 @@
 <?php
 namespace BERGWERK\BwrkAddress;
 
+use BERGWERK\BwrkAddress\FlexForm\Pi1;
+use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -16,21 +18,21 @@ class Bootstrap
         ExtensionManagementUtility::addStaticFile(self::$_extKey, 'Configuration/TypoScript', 'BERGWERK Address');
 
         // Register Plugins
-        ExtensionUtility::registerPlugin('BERGWERK.' . self::$_extKey, 'Pi1', 'BERGWERK Address (list)');
-        ExtensionUtility::registerPlugin('BERGWERK.' . self::$_extKey, 'Pi2', 'BERGWERK Address (single)');
+        self::registerPlugin('Pi1', 'BERGWERK Address (list)', Pi1::class);
+        self::registerPlugin('Pi2', 'BERGWERK Address (single)');
     }
 
     static public function extLocalconf()
     {
         // Configure Plugins
         ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi1',
-            array('Address' => 'list'),
-            array('Address' => 'list')
+            array('Address', 'list'),
+            array('Address', 'list')
         );
 
         ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi2',
-            array('Address' => 'single'),
-            array('Address' => 'single')
+            array('Address', 'single'),
+            array('Address', 'single')
         );
     }
 
@@ -47,8 +49,34 @@ class Bootstrap
     /**
      * @return int
      */
-    public static function getCurrentLanguage()
+    static public function getCurrentLanguage()
     {
         return (int)$GLOBALS['TSFE']->sys_language_uid;
+    }
+
+    static protected function registerPlugin($pluginName, $pluginTitle, $flexFormClass = null)
+    {
+        ExtensionUtility::registerPlugin('BERGWERK.' . self::$_extKey, $pluginName, $pluginTitle);
+
+        if (empty($flexFormClass))
+        {
+            return;
+        }
+
+        /** @var FlexForm $flexFormInstance */
+        $flexFormInstance = new $flexFormClass();
+
+        if (!$flexFormInstance instanceof FlexForm)
+        {
+            return;
+        }
+
+        $flexForm = $flexFormInstance->render();
+
+        $pluginSignature = strtolower(GeneralUtility::underscoredToUpperCamelCase(self::$_extKey)) . '_' . strtolower($pluginName);
+
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+
+        ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, $flexForm);
     }
 }
