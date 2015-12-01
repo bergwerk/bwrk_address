@@ -8,7 +8,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 class Bootstrap
 {
-    static protected $_extKey = 'bwrk_address';
+    static public $_extKey = 'bwrk_address';
 
     static protected function domainModel($modelName, $labelField = 'title', $isCategorizable = false)
     {
