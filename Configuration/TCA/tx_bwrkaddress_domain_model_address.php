@@ -9,4 +9,6 @@ $tcaConfiguration->setIconFile('EXT:bwrk_address/Resources/Public/Icons/Address.
 $tca = new \BERGWERK\BwrkUtility\Utility\Tca\Tca();
 $tca->init($tcaConfiguration);
 
+$tca->addInputField('title', 'Title');
+
 return $tca->createTca();

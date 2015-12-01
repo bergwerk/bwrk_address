@@ -2,7 +2,9 @@ CREATE TABLE tx_bwrkaddress_domain_model_address (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
+  sorting int(11) DEFAULT '0' NOT NULL,
 
+  title varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
