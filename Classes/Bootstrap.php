@@ -18,7 +18,7 @@ class Bootstrap
         ExtensionManagementUtility::addStaticFile(self::$_extKey, 'Configuration/TypoScript', 'BERGWERK Address');
 
         // Register Plugins
-        self::registerPlugin('Pi1', 'BERGWERK Address (list)', Pi1::class);
+        self::registerPlugin('Pi1', 'BERGWERK Address (list)'); //, Pi1::class);
         self::registerPlugin('Pi2', 'BERGWERK Address (single)');
     }
 
@@ -26,13 +26,13 @@ class Bootstrap
     {
         // Configure Plugins
         ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi1',
-            array('Address', 'list'),
-            array('Address', 'list')
+            array('Address' => 'list'),
+            array('Address' => 'list')
         );
 
         ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi2',
-            array('Address', 'single'),
-            array('Address', 'single')
+            array('Address' => 'single'),
+            array('Address' => 'single')
         );
     }
 
