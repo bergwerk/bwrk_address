@@ -9,14 +9,18 @@
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
                 <source>Address Entry</source>
             </trans-unit>
-            <trans-unit id="title">
+
+            <trans-unit id="tx_bwrkaddress_domain_model_address.title">
                 <source>Title</source>
             </trans-unit>
-            <trans-unit id="references">
+            <trans-unit id="tx_bwrkaddress_domain_model_address.tab_references">
                 <source>References</source>
             </trans-unit>
-            <trans-unit id="categories">
+            <trans-unit id="tx_bwrkaddress_domain_model_address.categories">
                 <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="tx_bwrkaddress_domain_model_address.entries">
+                <source>Entries</source>
             </trans-unit>
         </body>
     </file>
