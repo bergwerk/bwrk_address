@@ -6,6 +6,9 @@
             <trans-unit id="tx_bwrkaddress_domain_model_address">
                 <source>Address</source>
             </trans-unit>
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
+                <source>Address Entry</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
