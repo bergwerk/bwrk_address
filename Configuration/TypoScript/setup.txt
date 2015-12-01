@@ -4,4 +4,36 @@ plugin.tx_bwrkaddress {
         templateRootPath = {$plugin.tx_bwrkaddress.view.templateRootPath}
         layoutRootPath = {$plugin.tx_bwrkaddress.view.layoutRootPath}
     }
+
+    setup {
+        types {
+            phone {
+                label = Phone
+            }
+            fax {
+                label = Fax
+            }
+            mail {
+                label = Mail
+            }
+            website {
+                label = Website
+            }
+            note {
+                label = Note
+            }
+            country {
+                label = Country
+            }
+            city {
+                label = City
+            }
+            zip {
+                label = Zip
+            }
+            street_address {
+                label = Street address
+            }
+        }
+    }
 }
