@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-12-01T08:36:29Z" product-name="bwrk_address">
+        <header/>
+        <body>
+            <trans-unit id="tx_bwrkaddress_domain_model_address">
+                <source>Address</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
