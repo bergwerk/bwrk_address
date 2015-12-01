@@ -6,10 +6,6 @@
             <trans-unit id="tx_bwrkaddress_domain_model_address">
                 <source>Address</source>
             </trans-unit>
-            <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
-                <source>Address Entry</source>
-            </trans-unit>
-
             <trans-unit id="tx_bwrkaddress_domain_model_address.title">
                 <source>Title</source>
             </trans-unit>
@@ -21,6 +17,13 @@
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.entries">
                 <source>Entries</source>
+            </trans-unit>
+
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
+                <source>Address Entry</source>
+            </trans-unit>
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_type">
+                <source>Entry Type</source>
             </trans-unit>
         </body>
     </file>
