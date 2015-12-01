@@ -9,6 +9,8 @@ class AddressController extends AbstractController
 {
     public function listAction()
     {
+        DebuggerUtility::var_dump($this);
+
         $addresses = AddressRepository::create()->findAll();
 
         DebuggerUtility::var_dump($addresses);
