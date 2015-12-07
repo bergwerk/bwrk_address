@@ -14,7 +14,7 @@ $tca->init($tcaConfiguration);
 $tca->addSelectFieldFunc('entry_type', "BERGWERK\\BwrkAddress\\Utility\\BackendSelect->entityTypes");
 $tca->addInputField('entry_value');
 $tca->addTextField('entry_rte', true);
-$tca->addSysFileReference('entry_fal_images');
+$tca->addFalImageReference('entry_fal_images');
 $tca->addSysFileReference('entry_fal_files');
 
 return $tca->createTca();

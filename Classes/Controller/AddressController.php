@@ -2,18 +2,22 @@
 
 namespace BERGWERK\BwrkAddress\Controller;
 
-use BERGWERK\BwrkAddress\Domain\Repository\AddressRepository;
+use BERGWERK\BwrkAddress\Domain\Model\Address\Entry;
+use BERGWERK\BwrkAddress\Domain\Repository\Address\EntryRepository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class AddressController extends AbstractController
 {
     public function listAction()
     {
-        DebuggerUtility::var_dump($this);
+        /** @var Entry $entry */
+        $entry = EntryRepository::create()->findByUid(2);
 
-        $addresses = AddressRepository::create()->findAll();
-
-        DebuggerUtility::var_dump($addresses);
+        DebuggerUtility::var_dump(array(
+            'rte' => $entry->getIsRte(),
+            'images' => $entry->getIsImages(),
+            'files' => $entry->getIsFiles()
+        ));
     }
 
     public function singleAction()
