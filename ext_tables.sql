@@ -56,7 +56,8 @@ CREATE TABLE tx_bwrkaddress_domain_model_address_entry (
 
   entry_type varchar(255) DEFAULT '' NOT NULL,
   entry_value varchar(255) DEFAULT '' NOT NULL,
-  entry_fal int(11) unsigned DEFAULT '0' NOT NULL,
+  entry_fal_images int(11) unsigned DEFAULT '0' NOT NULL,
+  entry_fal_files int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

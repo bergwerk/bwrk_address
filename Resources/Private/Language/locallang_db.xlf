@@ -30,8 +30,11 @@
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_value">
                 <source>Value</source>
             </trans-unit>
-            <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_value">
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_fal_images">
                 <source>Images</source>
+            </trans-unit>
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_fal_files">
+                <source>Files</source>
             </trans-unit>
 
 
