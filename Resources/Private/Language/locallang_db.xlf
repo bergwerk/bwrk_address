@@ -25,7 +25,10 @@
                 <source>Address Entry</source>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_type">
-                <source>Entry Type</source>
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_value">
+                <source>Value</source>
             </trans-unit>
 
 

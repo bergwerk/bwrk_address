@@ -12,6 +12,6 @@ $tca = new \BERGWERK\BwrkUtility\Utility\Tca\Tca();
 $tca->init($tcaConfiguration);
 
 $tca->addSelectFieldFunc('entry_type', "BERGWERK\\BwrkAddress\\Utility\\BackendSelect->entityTypes");
-$tca->addInputField('entry_value', 'Value');
+$tca->addInputField('entry_value');
 
 return $tca->createTca();

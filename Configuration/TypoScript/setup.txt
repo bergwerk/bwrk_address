@@ -21,6 +21,7 @@ plugin.tx_bwrkaddress {
             }
             note {
                 label = Note
+                rte = 1
             }
             country {
                 label = Country
@@ -33,6 +34,14 @@ plugin.tx_bwrkaddress {
             }
             street_address {
                 label = Street address
+            }
+            image {
+                label = Image
+                fal = 1
+            }
+            media_gallery {
+                label = Media Gallery
+                fal = 1
             }
         }
     }
