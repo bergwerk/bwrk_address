@@ -7,6 +7,12 @@ plugin.tx_bwrkaddress {
 
     setup {
         types {
+#            example {
+#                label = Example
+#                rte = 0
+#                images = 1
+#                files = 1
+#            }
             phone {
                 label = Phone
             }
@@ -37,11 +43,15 @@ plugin.tx_bwrkaddress {
             }
             image {
                 label = Image
-                fal = 1
+                images= 1
             }
             media_gallery {
                 label = Media Gallery
-                fal = 1
+                images = 1
+            }
+            downloads {
+                label = Downloads
+                files = 1
             }
         }
     }
