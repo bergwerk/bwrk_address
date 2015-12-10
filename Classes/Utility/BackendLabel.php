@@ -25,8 +25,16 @@ class BackendLabel
             $parameters['title'] = 'NEW';
         } else {
             $typeConfiguration = $entry->getEntryType();
+            $typeKey = $typeConfiguration->getKey();
 
-            $parameters['title'] = $typeConfiguration->getLabel() . ': ' . $entry->getReadableValue();
+            if (empty($typeKey))
+            {
+                $parameters['title'] = 'NEW';
+            }
+            else
+            {
+                $parameters['title'] = $typeConfiguration->getLabel() . ': ' . $entry->getReadableValue();
+            }
         }
 
     }

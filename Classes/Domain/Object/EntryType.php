@@ -77,4 +77,12 @@ class EntryType
     {
         return $this->_config['label'];
     }
+
+    /**
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->_key;
+    }
 }
