@@ -21,11 +21,9 @@ class AddressController extends AbstractController
     {
         $categories = $this->settings['categories'];
 
-        DebuggerUtility::var_dump($categories);
-
         $addresses = AddressRepository::create()->findWithCategories($categories);
 
-        DebuggerUtility::var_dump($addresses);
+        $this->view->assign('addresses', $addresses);
     }
 
     /**

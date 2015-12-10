@@ -12,14 +12,11 @@ class AddressRepository extends AbstractRepository
     public function findWithCategories($categories)
     {
         $categoryUids = explode(',', $categories);
-        $categoryObjects = CategoryRepository::create()->findByUids($categoryUids);
-
-        DebuggerUtility::var_dump($categoryObjects);
 
         $query = $this->createQuery();
 
         $query->matching(
-            $query->in('categories', $categoryObjects)
+            $query->in('categories.uid', $categoryUids)
         );
 
         return $query->execute();
