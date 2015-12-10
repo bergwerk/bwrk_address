@@ -11,13 +11,9 @@ class AddressController extends AbstractController
     public function listAction()
     {
         /** @var Entry $entry */
-        $entry = EntryRepository::create()->findByUid(2);
+        $entry = EntryRepository::create()->findAll();
 
-        DebuggerUtility::var_dump(array(
-            'rte' => $entry->getIsRte(),
-            'images' => $entry->getIsImages(),
-            'files' => $entry->getIsFiles()
-        ));
+        DebuggerUtility::var_dump($entry);
     }
 
     public function singleAction()

@@ -18,8 +18,11 @@ class Entry extends AbstractModel
     /** @var string  */
     protected $entryRte = '';
 
-//    protected $entryFalImages;
-//    protected $entryFalFiles;
+    /** @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> */
+    protected $entryFalImages;
+
+    /** @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> */
+    protected $entryFalFiles;
 
     public function getReadableValue()
     {
