@@ -30,9 +30,11 @@ class Pi1 extends FlexForm
     public function render()
     {
         $this->addSheet('general', array(
-            $this->addSysCategoryReferences('categories')
+            $this->addSysCategoryReferencesFlexForm('categories')
         ));
 
-        return $this->renderFlexForm();
+        $xml = $this->renderFlexForm();
+
+        return $xml;
     }
 }

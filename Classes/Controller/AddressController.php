@@ -5,6 +5,7 @@ namespace BERGWERK\BwrkAddress\Controller;
 use BERGWERK\BwrkAddress\Domain\Model\Address\Entry;
 use BERGWERK\BwrkAddress\Domain\Repository\Address\EntryRepository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Frontend\Category\Collection\CategoryCollection;
 
 /**
  * Class AddressController
@@ -17,10 +18,9 @@ class AddressController extends AbstractController
      */
     public function listAction()
     {
-        /** @var Entry $entry */
-        $entry = EntryRepository::create()->findAll();
+        $categories = $this->settings['categories'];
 
-        DebuggerUtility::var_dump($entry);
+        DebuggerUtility::var_dump($categories);
     }
 
     /**
