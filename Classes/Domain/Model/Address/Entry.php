@@ -50,10 +50,20 @@ class Entry extends AbstractModel
             case $entryType->getIsImages():
                 return $this->getEntryFalImages()->count();
             case $entryType->getIsRte():
-                return substr($this->getEntryRte(), 0, 160) . '...';
+                return $this->shortenText($this->getEntryRte());
             default:
-                return $this->getEntryValue();
+                return $this->shortenText($this->getEntryValue());
         }
+    }
+
+    protected function shortenText($text, $length = 80)
+    {
+        if (strlen($text) > $length)
+        {
+            return substr($text, 0, $length) . '...';
+        }
+
+        return $text;
     }
 
     /**
