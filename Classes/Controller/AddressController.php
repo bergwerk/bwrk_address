@@ -6,8 +6,15 @@ use BERGWERK\BwrkAddress\Domain\Model\Address\Entry;
 use BERGWERK\BwrkAddress\Domain\Repository\Address\EntryRepository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
+/**
+ * Class AddressController
+ * @package BERGWERK\BwrkAddress\Controller
+ */
 class AddressController extends AbstractController
 {
+    /**
+     *
+     */
     public function listAction()
     {
         /** @var Entry $entry */
@@ -16,6 +23,9 @@ class AddressController extends AbstractController
         DebuggerUtility::var_dump($entry);
     }
 
+    /**
+     *
+     */
     public function singleAction()
     {
 

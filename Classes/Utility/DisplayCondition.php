@@ -4,6 +4,10 @@ namespace BERGWERK\BwrkAddress\Utility;
 
 use BERGWERK\BwrkAddress\Domain\Object\EntryType;
 
+/**
+ * Class DisplayCondition
+ * @package BERGWERK\BwrkAddress\Utility
+ */
 class DisplayCondition
 {
     /**
@@ -16,6 +20,11 @@ class DisplayCondition
         return EntryType::read($entryType);
     }
 
+    /**
+     * @param $arguments
+     * @param $conditions
+     * @return bool
+     */
     public function entryValue($arguments, $conditions)
     {
         $configuration = $this->getEntryType($arguments);
@@ -27,6 +36,11 @@ class DisplayCondition
         );
     }
 
+    /**
+     * @param $arguments
+     * @param $conditions
+     * @return bool
+     */
     public function entryRte($arguments, $conditions)
     {
         $configuration = $this->getEntryType($arguments);
@@ -34,6 +48,11 @@ class DisplayCondition
         return $configuration->getIsRte();
     }
 
+    /**
+     * @param $arguments
+     * @param $conditions
+     * @return bool
+     */
     public function entryFalImages($arguments, $conditions)
     {
         $configuration = $this->getEntryType($arguments);
@@ -41,6 +60,11 @@ class DisplayCondition
         return $configuration->getIsImages();
     }
 
+    /**
+     * @param $arguments
+     * @param $conditions
+     * @return bool
+     */
     public function entryFalFiles($arguments, $conditions)
     {
         $configuration = $this->getEntryType($arguments);

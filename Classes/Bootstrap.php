@@ -8,10 +8,20 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
+/**
+ * Class Bootstrap
+ * @package BERGWERK\BwrkAddress
+ */
 class Bootstrap
 {
+    /**
+     * @var string
+     */
     static public $_extKey = 'bwrk_address';
 
+    /**
+     *
+     */
     static public function extTables()
     {
         // Include TypoScript
@@ -22,6 +32,9 @@ class Bootstrap
         self::registerPlugin('Pi2', 'BERGWERK Address (single)');
     }
 
+    /**
+     *
+     */
     static public function extLocalconf()
     {
         // Configure Plugins
@@ -54,6 +67,11 @@ class Bootstrap
         return (int)$GLOBALS['TSFE']->sys_language_uid;
     }
 
+    /**
+     * @param $pluginName
+     * @param $pluginTitle
+     * @param null $flexFormClass
+     */
     static protected function registerPlugin($pluginName, $pluginTitle, $flexFormClass = null)
     {
         ExtensionUtility::registerPlugin('BERGWERK.' . self::$_extKey, $pluginName, $pluginTitle);

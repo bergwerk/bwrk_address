@@ -6,6 +6,10 @@ use BERGWERK\BwrkAddress\Bootstrap;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
+/**
+ * Class AbstractRepository
+ * @package BERGWERK\BwrkAddress\Domain\Repository
+ */
 class AbstractRepository extends Repository
 {
     /**
@@ -18,6 +22,9 @@ class AbstractRepository extends Repository
         );
     }
 
+    /**
+     *
+     */
     public function initializeObject()
     {
         $defaultQuerySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
