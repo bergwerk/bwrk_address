@@ -3,6 +3,7 @@
 namespace BERGWERK\BwrkAddress\Domain\Object;
 
 use BERGWERK\BwrkAddress\Configuration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class EntryType
@@ -84,5 +85,10 @@ class EntryType
     public function getKey()
     {
         return $this->_key;
+    }
+
+    public function getKeyUpper()
+    {
+        return GeneralUtility::underscoredToUpperCamelCase($this->getKey());
     }
 }

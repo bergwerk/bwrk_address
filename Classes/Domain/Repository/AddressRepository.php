@@ -1,7 +1,6 @@
 <?php
 
 namespace BERGWERK\BwrkAddress\Domain\Repository;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class AddressRepository
@@ -9,6 +8,10 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  */
 class AddressRepository extends AbstractRepository
 {
+    /**
+     * @param $categories
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
     public function findWithCategories($categories)
     {
         $categoryUids = explode(',', $categories);

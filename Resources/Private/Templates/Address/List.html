@@ -2,6 +2,10 @@
 
 <f:section name="Content">
 
-    LIST - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quacumque enim ingredimur, in aliqua historia vestigium ponimus. Neque enim disputari sine reprehensione nec cum iracundia aut pertinacia recte disputari potest. Duo Reges: constructio interrete. Quid sequatur, quid repugnet, vident. Duarum enim vitarum nobis erunt instituta capienda. Sed eum qui audiebant, quoad poterant, defendebant sententiam suam. Re mihi non aeque satisfacit, et quidem locis pluribus.
+    <div class="address-list">
+        <f:for each="{addresses}" as="address">
+            <f:render partial="Address/List/Item" arguments="{address:address}" />
+        </f:for>
+    </div>
 
 </f:section>
