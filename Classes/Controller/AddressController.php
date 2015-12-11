@@ -3,6 +3,7 @@
 namespace BERGWERK\BwrkAddress\Controller;
 
 use BERGWERK\BwrkAddress\Domain\Repository\AddressRepository;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class AddressController
@@ -27,6 +28,10 @@ class AddressController extends AbstractController
      */
     public function singleAction()
     {
+        $addressUid = (int) $this->settings['address'];
 
+        $address = AddressRepository::create()->findByUid($addressUid);
+
+        $this->view->assign('address', $address);
     }
 }

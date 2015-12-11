@@ -48,6 +48,14 @@
                 <source>Categories</source>
             </trans-unit>
 
+
+            <trans-unit id="flexform.Pi2.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi2.address">
+                <source>Address</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
