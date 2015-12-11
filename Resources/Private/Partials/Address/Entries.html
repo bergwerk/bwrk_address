@@ -1,0 +1,16 @@
+<f:if condition="{entries->f:count() > 0}">
+
+    <div class="address__item-entry--{entries.first.entryType.key}">
+
+        <f:for each="{entries}" as="addressEntry">
+
+            <div class="address__item-entry--{addressEntry.entryType.key}">
+                <f:render partial="Address/EntryType/{addressEntry.entryType.keyUpper}"
+                          arguments="{address:address, addressEntry:addressEntry}"/>
+            </div>
+
+        </f:for>
+
+    </div>
+
+</f:if>
