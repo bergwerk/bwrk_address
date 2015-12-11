@@ -4,6 +4,7 @@ namespace BERGWERK\BwrkAddress\Domain\Object;
 
 use BERGWERK\BwrkAddress\Configuration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class EntryType
@@ -90,5 +91,10 @@ class EntryType
     public function getKeyUpper()
     {
         return GeneralUtility::underscoredToUpperCamelCase($this->getKey());
+    }
+
+    public function getShowInList()
+    {
+        return $this->checkConfigurationFlag('showInList');
     }
 }

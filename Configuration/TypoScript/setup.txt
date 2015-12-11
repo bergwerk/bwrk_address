@@ -9,25 +9,31 @@ plugin.tx_bwrkaddress {
         types {
 #            example {
 #                label = Example
+#                showInList = 1
 #                rte = 0
 #                images = 1
 #                files = 1
 #            }
+            image {
+                label = Image
+                showInList = 1
+                images= 1
+            }
             phone {
                 label = Phone
+                showInList = 1
             }
             fax {
                 label = Fax
+                showInList = 1
             }
             mail {
                 label = Mail
+                showInList = 1
             }
             website {
                 label = Website
-            }
-            note {
-                label = Note
-                rte = 1
+                showInList = 1
             }
             country {
                 label = Country
@@ -41,9 +47,9 @@ plugin.tx_bwrkaddress {
             street_address {
                 label = Street address
             }
-            image {
-                label = Image
-                images= 1
+            note {
+                label = Note
+                rte = 1
             }
             media_gallery {
                 label = Media Gallery

@@ -8,9 +8,11 @@
 
         <f:for each="{address.entries}" as="addressEntry">
 
-            <div class="address-list__item-entry--{addressEntry.entryType.key}">
-                <f:render partial="Address/EntryType/{addressEntry.entryType.keyUpper}" arguments="{address:address, addressEntry:addressEntry}" />
-            </div>
+            <f:if condition="{addressEntry.entryType.showInList}">
+                <div class="address-list__item-entry--{addressEntry.entryType.key}">
+                    <f:render partial="Address/EntryType/{addressEntry.entryType.keyUpper}" arguments="{address:address, addressEntry:addressEntry}" />
+                </div>
+            </f:if>
 
         </f:for>
     </div>
