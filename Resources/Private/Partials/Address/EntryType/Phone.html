@@ -1,1 +1,7 @@
-<p>{addressEntry.entryValue}</p>
+{namespace bwrk=BERGWERK\BwrkAddress\ViewHelpers}
+
+<p>
+    <bwrk:link.phone tel="{addressEntry.entryValue}">
+        {addressEntry.entryValue}
+    </bwrk:link.phone>
+</p>
