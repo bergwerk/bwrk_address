@@ -16,47 +16,49 @@ plugin.tx_bwrkaddress {
 #            }
             image {
                 label = Image
-                showInList = 1
                 images= 1
             }
             phone {
                 label = Phone
-                showInList = 1
             }
             fax {
                 label = Fax
-                showInList = 1
             }
             mail {
                 label = Mail
-                showInList = 1
             }
             website {
                 label = Website
-                showInList = 1
             }
             country {
                 label = Country
+                showOnlyDetail = 1
             }
             city {
                 label = City
+                showOnlyDetail = 1
             }
             zip {
                 label = Zip
+                showOnlyDetail = 1
             }
             street_address {
                 label = Street address
+                showOnlyDetail = 1
             }
             note {
                 label = Note
+                showOnlyDetail = 1
                 rte = 1
             }
             media_gallery {
                 label = Media Gallery
+                showOnlyDetail = 1
                 images = 1
             }
             downloads {
                 label = Downloads
+                showOnlyDetail = 1
                 files = 1
             }
         }

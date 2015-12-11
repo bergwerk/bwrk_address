@@ -93,8 +93,8 @@ class EntryType
         return GeneralUtility::underscoredToUpperCamelCase($this->getKey());
     }
 
-    public function getShowInList()
+    public function getShowOnlyDetail()
     {
-        return $this->checkConfigurationFlag('showInList');
+        return $this->checkConfigurationFlag('showOnlyDetail');
     }
 }
