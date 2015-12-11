@@ -48,7 +48,12 @@ class Entry extends AbstractModel
             case $entryType->getIsFiles():
                 return $this->getEntryFalFiles()->count();
             case $entryType->getIsImages():
-                return $this->getEntryFalImages()->count();
+
+                $images = $this->getEntryFalImages();
+
+//                DebuggerUtility::var_dump($images, $entryType->getKey());
+
+                return $images->count();
             case $entryType->getIsRte():
                 return $this->shortenText($this->getEntryRte());
             default:

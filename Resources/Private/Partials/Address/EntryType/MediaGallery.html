@@ -1,3 +1,7 @@
-<f:for each="{addressEntry.entryFalImages}" as="file">
-    <f:image src="{file.uid}" treatIdAsReference="1"/>
-</f:for>
+<ul class="small-block-grid-1 medium-block-grid-3">
+    <f:for each="{addressEntry.entryFalImages}" as="file">
+        <li>
+            <f:image src="{file.uid}" treatIdAsReference="1"/>
+        </li>
+    </f:for>
+</ul>
