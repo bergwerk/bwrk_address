@@ -1,1 +1,12 @@
-<p>{addressEntry.entryValue}</p>
+<ul>
+    <f:for each="{addressEntry.entryFalFiles}" as="file">
+        <li>
+            <f:link.page pageUid="{f:uri.image(src:file.originalResource.uid,treatIdAsReference:1)}" target="_blank">
+                <f:if condition="{file.originalResource.title}">
+                    <f:then>{file.originalResource.title}</f:then>
+                    <f:else>{file.originalResource.name}</f:else>
+                </f:if>
+            </f:link.page>
+        </li>
+    </f:for>
+</ul>

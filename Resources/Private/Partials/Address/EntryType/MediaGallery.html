@@ -1,1 +1,3 @@
-<p>{addressEntry.entryValue}</p>
+<f:for each="{addressEntry.entryFalImages}" as="file">
+    <f:image src="{file.uid}" treatIdAsReference="1"/>
+</f:for>
