@@ -3,6 +3,7 @@ namespace BERGWERK\BwrkAddress;
 
 use BERGWERK\BwrkAddress\FlexForm\Pi1;
 use BERGWERK\BwrkAddress\FlexForm\Pi2;
+use BERGWERK\BwrkAddress\FlexForm\Pi3;
 use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -31,6 +32,7 @@ class Bootstrap
         // Register Plugins
         self::registerPlugin('Pi1', 'BERGWERK Address (list)', Pi1::class);
         self::registerPlugin('Pi2', 'BERGWERK Address (single)', Pi2::class);
+        self::registerPlugin('Pi3', 'BERGWERK Address (detail)', Pi3::class);
     }
 
     /**
@@ -47,6 +49,11 @@ class Bootstrap
         ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi2',
             array('Address' => 'single'),
             array('Address' => 'single')
+        );
+
+        ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi3',
+            array('Address' => 'detail'),
+            array('Address' => 'detail')
         );
     }
 

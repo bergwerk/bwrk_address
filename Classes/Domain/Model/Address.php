@@ -1,6 +1,7 @@
 <?php
 
 namespace BERGWERK\BwrkAddress\Domain\Model;
+use BERGWERK\BwrkAddress\Domain\Repository\Address\EntryRepository;
 
 /**
  * Class Address
@@ -41,5 +42,12 @@ class Address extends AbstractModel
         return $this->categories;
     }
 
-
+    /**
+     * @param string $entryType
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getEntriesWithType($entryType)
+    {
+        return EntryRepository::create()->findByAddressAndType($this, $entryType);
+    }
 }

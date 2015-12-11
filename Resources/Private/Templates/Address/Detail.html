@@ -1,0 +1,47 @@
+{namespace bwrk=BERGWERK\BwrkAddress\ViewHelpers}
+
+<f:layout name="General"/>
+
+<f:section name="Content">
+
+    <f:alias map="{
+        phone: '{bwrk:address.entry(address:\'{address}\',entryType:\'phone\')}',
+        fax: '{bwrk:address.entry(address:\'{address}\',entryType:\'fax\')}',
+        mail: '{bwrk:address.entry(address:\'{address}\',entryType:\'mail\')}',
+        website: '{bwrk:address.entry(address:\'{address}\',entryType:\'website\')}',
+        country: '{bwrk:address.entry(address:\'{address}\',entryType:\'country\')}',
+        city: '{bwrk:address.entry(address:\'{address}\',entryType:\'city\')}',
+        zip: '{bwrk:address.entry(address:\'{address}\',entryType:\'zip\')}',
+        streetAddress: '{bwrk:address.entry(address:\'{address}\',entryType:\'street_address\')}',
+        note: '{bwrk:address.entry(address:\'{address}\',entryType:\'note\')}',
+        mediaGallery: '{bwrk:address.entry(address:\'{address}\',entryType:\'media_gallery\')}',
+        downloads: '{bwrk:address.entry(address:\'{address}\',entryType:\'downloads\')}'
+    }">
+
+        <div class="address-detail">
+
+            <div class="address__item">
+
+                <div class="address__item-title">
+                    <h3>{address.title}</h3>
+                </div>
+
+                <div class="address__item-entries">
+
+                    <f:for each="{address.entries}" as="addressEntry">
+                        <div class="address__item-entry--{addressEntry.entryType.key}">
+                            <f:render partial="Address/EntryType/{addressEntry.entryType.keyUpper}"
+                                      arguments="{address:address, addressEntry:addressEntry}"/>
+                        </div>
+                    </f:for>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </f:alias>
+
+
+</f:section>
