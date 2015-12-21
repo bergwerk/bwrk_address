@@ -5,10 +5,12 @@
 <f:section name="Content">
 
     <f:alias map="{
+        image: '{bwrk:address.entry(address:\'{address}\',entryType:\'image\')}',
         phone: '{bwrk:address.entry(address:\'{address}\',entryType:\'phone\')}',
         fax: '{bwrk:address.entry(address:\'{address}\',entryType:\'fax\')}',
         mail: '{bwrk:address.entry(address:\'{address}\',entryType:\'mail\')}',
         website: '{bwrk:address.entry(address:\'{address}\',entryType:\'website\')}',
+        company: '{bwrk:address.entry(address:\'{address}\',entryType:\'company\')}',
         country: '{bwrk:address.entry(address:\'{address}\',entryType:\'country\')}',
         city: '{bwrk:address.entry(address:\'{address}\',entryType:\'city\')}',
         zip: '{bwrk:address.entry(address:\'{address}\',entryType:\'zip\')}',
@@ -26,10 +28,12 @@
                     <h1>{address.title}</h1>
                 </div>
 
+                <f:render partial="Address/Entries" arguments="{address:address,entries:image}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:phone}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:fax}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:mail}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:website}" />
+                <f:render partial="Address/Entries" arguments="{address:address,entries:company}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:country}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:city}" />
                 <f:render partial="Address/Entries" arguments="{address:address,entries:zip}" />
