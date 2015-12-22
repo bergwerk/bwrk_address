@@ -1,10 +1,10 @@
 <?php
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'BERGWERK Address',
-	'description' => 'Manage addresses, display a list of all addresses, define a custom order and display detail views of every address.',
+	'description' => 'Manage addresses, display a list of all addresses, or display a single entry - detail pages are also an option.',
 	'category' => 'plugin',
-	'version' => '0.4.0',
-	'state' => 'alpha',
+	'version' => '1.0.0',
+	'state' => 'beta',
 	'author' => 'Daniel Maier',
 	'author_email' => 'dm@bergwerk.ag',
 	'author_company' => 'BERGWERK Werbeagentur GmbH',
