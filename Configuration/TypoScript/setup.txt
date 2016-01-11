@@ -1,15 +1,21 @@
 plugin.tx_bwrkaddress {
     view {
-        partialRootPath = {$plugin.tx_bwrkaddress.view.partialRootPath}
-        templateRootPath = {$plugin.tx_bwrkaddress.view.templateRootPath}
-        layoutRootPath = {$plugin.tx_bwrkaddress.view.layoutRootPath}
+        partialRootPaths {
+            0 = {$plugin.tx_bwrkaddress.view.partialRootPath}
+        }
+        templateRootPaths {
+            0 = {$plugin.tx_bwrkaddress.view.templateRootPath}
+        }
+        layoutRootPaths {
+            0 = {$plugin.tx_bwrkaddress.view.layoutRootPath}
+        }
     }
 
     setup {
         types {
 #            example {
 #                label = Example
-#                showInList = 1
+#                showOnlyDetail = 1
 #                rte = 0
 #                images = 1
 #                files = 1
