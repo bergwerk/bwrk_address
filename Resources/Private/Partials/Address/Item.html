@@ -9,7 +9,7 @@
         <f:for each="{address.entries}" as="addressEntry">
             <f:if condition="{addressEntry.entryType.showOnlyDetail} == 0">
 
-                <f:render partial="Address/Entries" arguments="{address:address, entries: '{0:addressEntry}'}" />
+                <f:render partial="Address/Entries" arguments="{address:address, entries: '{0:addressEntry}'}"/>
 
             </f:if>
         </f:for>
