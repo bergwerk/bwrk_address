@@ -49,11 +49,13 @@ The main entrance point here it the TypoScript file called "Configuration/TypoSc
 
 Each entry type must be defined in "plugin.tx_bwrkaddress.setup.types" and could have the following fields set:
  
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| field          | default value | meaning                         |
+|----------------|---------------|---------------------------------|
+| label          |               | title of the entry-type         |
+| showOnlyDetail | 0             | defines whether a entry         |
+| rte            | 0             | shows an rte area               |
+| images         | 0             | enable images to be attached    |
+| files          | 0             | enable all files to be attached |
 
 ### Templating
 
