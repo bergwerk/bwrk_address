@@ -5,6 +5,8 @@ bwrk_address is a simple but dynamic TYPO3-Extension which allows address integr
 ## Table of contents
 * What it does
 * Developer guide
+ * Configure entry-types
+ * Templating
 * User guide
 
 ## What it does
@@ -39,3 +41,8 @@ e.q. render a slider in element media_gallery
 
 ## Developer guide
 
+### Configure entry-types
+
+### Templating
+
+## User guide
