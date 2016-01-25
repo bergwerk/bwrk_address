@@ -41,7 +41,19 @@ e.q. render a slider in element media_gallery
 
 ## Developer guide
 
+This section of the documentation is directed to TYPO3-Integrator and/or developer who want to improve or understand our extension.
+
 ### Configure entry-types
+
+The main entrance point here it the TypoScript file called "Configuration/TypoScript/setup.txt" in which you'll find the basic extension setup.
+
+Each entry type must be defined in "plugin.tx_bwrkaddress.setup.types" and could have the following fields set:
+ 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 ### Templating
 
