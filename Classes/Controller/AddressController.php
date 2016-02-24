@@ -3,6 +3,7 @@
 namespace BERGWERK\BwrkAddress\Controller;
 
 use BERGWERK\BwrkAddress\Domain\Repository\AddressRepository;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class AddressController
@@ -27,9 +28,9 @@ class AddressController extends AbstractController
      */
     public function listManualAction()
     {
-        $categories = $this->settings['categories'];
+        $records = $this->settings['records'];
 
-        $addresses = AddressRepository::create()->findWithCategories($categories);
+        $addresses = AddressRepository::create()->findByUids($records);
 
         $this->view->assign('addresses', $addresses);
     }
@@ -47,7 +48,7 @@ class AddressController extends AbstractController
     }
 
     /**
-     *
+     * @todo get address uid by url
      */
     public function detailAction()
     {

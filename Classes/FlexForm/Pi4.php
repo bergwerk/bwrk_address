@@ -30,7 +30,7 @@ class Pi4 extends FlexForm
     public function render()
     {
         $this->addSheet('general', array(
-            $this->addSysCategoryReferencesFlexForm('categories')
+            $this->addSingleRelationField('records', 'tx_bwrkaddress_domain_model_address', 10, 999)
         ));
 
         $xml = $this->renderFlexForm();

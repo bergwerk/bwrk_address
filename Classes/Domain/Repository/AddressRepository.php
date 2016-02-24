@@ -9,7 +9,7 @@ namespace BERGWERK\BwrkAddress\Domain\Repository;
 class AddressRepository extends AbstractRepository
 {
     /**
-     * @param $categories
+     * @param $categories string
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
     public function findWithCategories($categories)
@@ -23,5 +23,23 @@ class AddressRepository extends AbstractRepository
         );
 
         return $query->execute();
+    }
+
+    /**
+     * @param $records string
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByUids($records)
+    {
+        $uids = explode(',', $records);
+
+        $objects = array();
+
+        foreach ($uids as $uid)
+        {
+            $objects[] = $this->findByUid($uid);
+        }
+
+        return $objects;
     }
 }
