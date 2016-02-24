@@ -13,7 +13,7 @@ class AddressController extends AbstractController
     /**
      *
      */
-    public function listAction()
+    public function listCategoryAction()
     {
         $categories = $this->settings['categories'];
 
