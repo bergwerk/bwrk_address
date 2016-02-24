@@ -13,7 +13,19 @@ class AddressController extends AbstractController
     /**
      *
      */
-    public function listCategoryAction()
+    public function listAction()
+    {
+        $categories = $this->settings['categories'];
+
+        $addresses = AddressRepository::create()->findWithCategories($categories);
+
+        $this->view->assign('addresses', $addresses);
+    }
+
+    /**
+     *
+     */
+    public function listManualAction()
     {
         $categories = $this->settings['categories'];
 
