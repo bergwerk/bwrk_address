@@ -35,7 +35,7 @@ class AddressRepository extends AbstractRepository
 
         $objects = array();
 
-        foreach ($uids as $uid) 
+        foreach ($uids as $uid)
         {
             $object = $this->findByUid($uid);
 
