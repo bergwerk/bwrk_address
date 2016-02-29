@@ -3,7 +3,6 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-12-01T08:36:29Z" product-name="bwrk_address">
         <header/>
         <body>
-
             <trans-unit id="tx_bwrkaddress_domain_model_address">
                 <source>Address</source>
             </trans-unit>
@@ -46,6 +45,9 @@
             </trans-unit>
             <trans-unit id="flexform.Pi1.categories">
                 <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi1.filter">
+                <source>Activate Filter?</source>
             </trans-unit>
 
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace BERGWERK\BwrkAddress\Domain\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
  * Class AddressRepository
@@ -22,29 +23,10 @@ class AddressRepository extends AbstractRepository
             $query->in('categories.uid', $categoryUids)
         );
 
+        $query->setOrderings(array(
+            'title' => QueryInterface::ORDER_ASCENDING
+        ));
+
         return $query->execute();
-    }
-
-    /**
-     * @param $records string
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-     */
-    public function findByUids($records)
-    {
-        $uids = explode(',', $records);
-
-        $objects = array();
-
-        foreach ($uids as $uid)
-        {
-            $object = $this->findByUid($uid);
-
-            if (!is_null($object))
-            {
-                $objects[] = $object;
-            }
-        }
-
-        return $objects;
     }
 }
