@@ -75,4 +75,6 @@ plugin.tx_bwrkaddress {
 }
 
 page.includeCSS.bwrk_address_list = EXT:bwrk_address/Resources/Public/Css/AddressList.css
+
 page.includeJSFooter.bwrk_address_filter = EXT:bwrk_address/Resources/Public/Js/AddressFilter.js
+page.includeJSFooter.bwrk_address_list = EXT:bwrk_address/Resources/Public/Js/AddressList.js
