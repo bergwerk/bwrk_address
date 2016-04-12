@@ -8,7 +8,7 @@
     "typo3-ter/bwrk-utility": ">=1.0.0,<= 1.9.99",
   },
   "replace": {
-    "bwrk-address": "self.version",
+    "bwrk_address": "self.version",
     "typo3-ter/bwrk-address": "self.version"
   },
   "autoload": {
