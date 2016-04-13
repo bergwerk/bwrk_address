@@ -1,0 +1,10 @@
+{
+  "name": "bergwerk/bwrk-address",
+  "type": "typo3-cms-extension",
+  "description": "Address extension for TYPO3",
+  "homepage": "https://www.bergwerk.ag/",
+  "license": ["GPL-2.0+"],
+  "keywords": ["TYPO3 CMS", "address"],
+  "version": "1.3.2",
+  "minimum-stability":"stable"
+}
