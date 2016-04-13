@@ -1,0 +1,19 @@
+<f:layout name="General"/>
+
+<f:section name="Content">
+
+    <div class="address-list">
+        <ul class="small-block-grid-1 medium-block-grid-3">
+
+            <f:for each="{addresses}" as="address">
+
+                <li>
+                    <f:render partial="Address/Item" arguments="{address:address}"/>
+                </li>
+
+            </f:for>
+
+        </ul>
+    </div>
+
+</f:section>

@@ -14,6 +14,6 @@ $tca->addInputField('title');
 $tca->addReferenceField('entries', 'tx_bwrkaddress_domain_model_address_entry', 'address', 'sorting');
 
 $tca->addTab('tab_references');
-$tca->addSysCategoryReferences('categories', 0, 10, 0, 999, 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:categories');
+$tca->addSysCategoryReferences('categories', 0, 20, 0, 999, 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:categories');
 
 return $tca->createTca();

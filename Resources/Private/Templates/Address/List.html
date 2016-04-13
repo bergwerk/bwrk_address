@@ -2,18 +2,35 @@
 
 <f:section name="Content">
 
-    <div class="address-list">
-        <ul class="small-block-grid-1 medium-block-grid-3">
-
-            <f:for each="{addresses}" as="address">
-
-                <li>
-                    <f:render partial="Address/Item" arguments="{address:address}"/>
+    <f:if condition="{settings.filter}">
+        <div class="address-filter" data-target="#address-filter-target">
+            <ul>
+                <li data-category-uid="-1" class="active">
+                    <a href="#">
+                        <f:translate key="show_all" />
+                    </a>
                 </li>
+                <f:for each="{categories}" as="category">
+                    <li data-category-uid="{category.uid}">
+                        <a href="#">
+                            {category.title}
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
 
+    <div class="address-list" id="address-filter-target">
+        <div class="row">
+            <f:for each="{addresses}" as="address">
+                <div class="small-12 medium-4 columns">
+                    <div class="address-item" data-address-uid="{address.uid}" data-category-uids="{address.categoryUidsJson}">
+                        <f:render partial="Address/Item" arguments="{address:address}"/>
+                    </div>
+                </div>
             </f:for>
-
-        </ul>
+        </div>
     </div>
 
 </f:section>
