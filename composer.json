@@ -8,7 +8,7 @@
   "homepage": "https://www.bergwerk.ag/",
   "require": {
     "typo3/cms-core": ">=6.2.0,<8.0",
-    "typo3-ter/bwrk-utility": ">=1.0.0,<= 1.9.99"
+    "bergwerk/bwrk-utility": "dev-master"
   },
   "replace": {
     "bwrk_address": "self.version",
