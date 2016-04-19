@@ -1,9 +1,11 @@
 {
   "name": "bergwerk/bwrk-address",
-<<<<<<< HEAD
   "description": "Manage addresses, display a list of all addresses, or display a single entry - detail pages are also an option.",
   "type": "typo3-cms-extension",
-  "version": "1.3.1",
+  "version": "1.3.2",
+  "license": [ "GPL-2.0" ],
+  "keywords": [ "TYPO3 CMS", "address" ],
+  "homepage": "https://www.bergwerk.ag/",
   "require": {
     "typo3/cms-core": ">=6.2.0,<8.0",
     "typo3-ter/bwrk-utility": ">=1.0.0,<= 1.9.99"
@@ -17,15 +19,5 @@
       "BERGWERK\\BwrkAddress\\": "Classes/"
     }
   },
-  "homepage": "https://www.bergwerk.ag"
-}
-=======
-  "type": "typo3-cms-extension",
-  "description": "Address extension for TYPO3",
-  "homepage": "https://www.bergwerk.ag/",
-  "license": ["GPL-2.0+"],
-  "keywords": ["TYPO3 CMS", "address"],
-  "version": "1.3.2",
   "minimum-stability":"stable"
 }
->>>>>>> bergwerk/master
