@@ -4,6 +4,7 @@ namespace BERGWERK\BwrkAddress\FlexForm;
 
 use BERGWERK\BwrkAddress\Bootstrap;
 use BERGWERK\BwrkUtility\Utility\Tca\Configuration;
+use BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column;
 use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 
 /**
@@ -29,8 +30,12 @@ class Pi3 extends FlexForm
      */
     public function render()
     {
+        $address = new Column('address');
+        $address->setAllowed('tx_bwrkaddress_domain_model_address');
+        $address->setMinItems(1);
+        $address->setMaxItems(1);
         $this->addSheet('general', array(
-            $this->addPageReference('address', 'tx_bwrkaddress_domain_model_address', 1, 1, 1)
+            $this->addPageReference($address)
         ));
 
         $xml = $this->renderFlexForm();

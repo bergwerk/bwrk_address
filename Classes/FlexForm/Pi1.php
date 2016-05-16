@@ -4,6 +4,7 @@ namespace BERGWERK\BwrkAddress\FlexForm;
 
 use BERGWERK\BwrkAddress\Bootstrap;
 use BERGWERK\BwrkUtility\Utility\Tca\Configuration;
+use BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column;
 use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 
 /**
@@ -30,8 +31,8 @@ class Pi1 extends FlexForm
     public function render()
     {
         $this->addSheet('general', array(
-            $this->addSysCategoryReferencesFlexForm('categories'),
-            $this->addCheckField('filter')
+            $this->addSysCategoryReferencesFlexForm(new Column('categories')),
+            $this->addCheckField(new Column('filter'))
         ));
 
         $xml = $this->renderFlexForm();

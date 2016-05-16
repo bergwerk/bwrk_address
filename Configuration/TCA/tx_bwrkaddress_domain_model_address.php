@@ -1,19 +1,25 @@
 <?php
-
 $tcaConfiguration = new \BERGWERK\BwrkUtility\Utility\Tca\Configuration();
 $tcaConfiguration->setExt(\BERGWERK\BwrkAddress\Bootstrap::$_extKey);
 $tcaConfiguration->setModel('tx_bwrkaddress_domain_model_address');
-$tcaConfiguration->setLabelField('title');
-$tcaConfiguration->setIconFile('EXT:bwrk_address/Resources/Public/Icons/Address.svg');
+$tcaConfiguration->ctrl->setLabel('title');
+$tcaConfiguration->ctrl->setIconFile('EXT:bwrk_address/Resources/Public/Icons/Address.svg');
 
 $tca = new \BERGWERK\BwrkUtility\Utility\Tca\Tca();
 $tca->init($tcaConfiguration);
 
-$tca->addInputField('title');
+$tca->addInputField(new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('title'));
 
-$tca->addReferenceField('entries', 'tx_bwrkaddress_domain_model_address_entry', 'address', 'sorting');
+$entries = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('entries');
+$entries->setForeignTable('tx_bwrkaddress_domain_model_address_entry');
+$entries->setForeignField('address');
+$entries->setForeignSortBy('sorting');
+$tca->addReferenceField($entries);
 
 $tca->addTab('tab_references');
-$tca->addSysCategoryReferences('categories', 0, 20, 0, 999, 'LLL:EXT:bwrk_address/Resources/Private/Language/locallang_db.xlf:categories');
+
+$categories = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('categories');
+$categories->setSize(20);
+$tca->addSysCategoryReferences($categories);
 
 return $tca->createTca();

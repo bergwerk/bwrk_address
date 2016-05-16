@@ -4,6 +4,7 @@ namespace BERGWERK\BwrkAddress\FlexForm;
 
 use BERGWERK\BwrkAddress\Bootstrap;
 use BERGWERK\BwrkUtility\Utility\Tca\Configuration;
+use BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column;
 use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 
 /**
@@ -29,8 +30,12 @@ class Pi4 extends FlexForm
      */
     public function render()
     {
+        $records = new Column('records');
+        $records->setForeignTable('tx_bwrkaddress_domain_model_address');
+        $records->setSize(10);
+        $records->setMaxItems(999);
         $this->addSheet('general', array(
-            $this->addSingleRelationField('records', 'tx_bwrkaddress_domain_model_address', 10, 999)
+            $this->addSingleRelationField($records)
         ));
 
         $xml = $this->renderFlexForm();
