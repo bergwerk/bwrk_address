@@ -14,7 +14,21 @@ $entries = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('entries');
 $entries->setForeignTable('tx_bwrkaddress_domain_model_address_entry');
 $entries->setForeignField('address');
 $entries->setForeignSortBy('sorting');
+$entries->setAppearance(array(
+    'collapseAll' => false,
+    'useSortable' => true,
+    'showHeader' => false,
+
+    'enabledControls' => array(
+        'sort' => false,
+    )
+));
+$entries->setExpandAll(true);
 $tca->addReferenceField($entries);
+
+$jsUserFunc = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('jsUserFunc');
+$jsUserFunc->setUserFunc('BERGWERK\\BwrkAddress\\Utility\\BackendButton->addButton');
+$tca->addUserFunc($jsUserFunc);
 
 $tca->addTab('tab_references');
 
