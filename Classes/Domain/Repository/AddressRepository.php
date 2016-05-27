@@ -1,6 +1,7 @@
 <?php
 
 namespace BERGWERK\BwrkAddress\Domain\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
  * Class AddressRepository
@@ -21,6 +22,10 @@ class AddressRepository extends AbstractRepository
         $query->matching(
             $query->in('categories.uid', $categoryUids)
         );
+
+        $query->setOrderings(array(
+            'sorting' => QueryInterface::ORDER_ASCENDING
+        ));
 
         return $query->execute();
     }
