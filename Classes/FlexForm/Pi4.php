@@ -7,19 +7,19 @@ use BERGWERK\BwrkUtility\Utility\Tca\Configuration;
 use BERGWERK\BwrkUtility\Utility\Tca\FlexForm;
 
 /**
- * Class Pi1
+ * Class Pi4
  * @package BERGWERK\BwrkAddress\FlexForm
  */
-class Pi1 extends FlexForm
+class Pi4 extends FlexForm
 {
     /**
-     * Pi1 constructor.
+     * Pi4 constructor.
      */
     public function __construct()
     {
         $configuration = new Configuration();
         $configuration->setExt(Bootstrap::$_extKey);
-        $configuration->setPlugin('Pi1');
+        $configuration->setPlugin('Pi4');
 
         $this->init($configuration);
     }
@@ -30,8 +30,7 @@ class Pi1 extends FlexForm
     public function render()
     {
         $this->addSheet('general', array(
-            $this->addSysCategoryReferencesFlexForm('categories'),
-            $this->addCheckField('filter')
+            $this->addSingleRelationField('records', 'tx_bwrkaddress_domain_model_address', 10, 999)
         ));
 
         $xml = $this->renderFlexForm();

@@ -10,7 +10,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 class AddressRepository extends AbstractRepository
 {
     /**
-     * @param $categories
+     * @param $categories string
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
     public function findWithCategories($categories)
@@ -24,7 +24,7 @@ class AddressRepository extends AbstractRepository
         );
 
         $query->setOrderings(array(
-            'sorting' => QueryInterface::ORDER_ASCENDING
+            'title' => QueryInterface::ORDER_ASCENDING
         ));
 
         return $query->execute();

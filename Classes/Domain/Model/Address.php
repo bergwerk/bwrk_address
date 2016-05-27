@@ -35,7 +35,7 @@ class Address extends AbstractModel
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return Category[]
      */
     public function getCategories()
     {
@@ -49,5 +49,30 @@ class Address extends AbstractModel
     public function getEntriesWithType($entryType)
     {
         return EntryRepository::create()->findByAddressAndType($this, $entryType);
+    }
+
+    /**
+     * @return array[int]
+     */
+    public function getCategoryUids()
+    {
+        $uids = array();
+
+        foreach ($this->getCategories() as $category)
+        {
+            $uids[] = (int) $category->getUid();
+        }
+
+        return $uids;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategoryUidsJson()
+    {
+        return json_encode(
+            $this->getCategoryUids()
+        );
     }
 }
