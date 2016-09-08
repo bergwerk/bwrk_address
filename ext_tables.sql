@@ -12,6 +12,8 @@ CREATE TABLE tx_bwrkaddress_domain_model_address (
   categories varchar(255) DEFAULT '' NOT NULL,
 
   title varchar(255) DEFAULT '' NOT NULL,
+  latitude varchar(255) DEFAULT '' NOT NULL,
+  longitude varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

@@ -15,7 +15,7 @@ $entries->setForeignTable('tx_bwrkaddress_domain_model_address_entry');
 $entries->setForeignField('address');
 $entries->setForeignSortBy('sorting');
 $entries->setAppearance(array(
-    'collapseAll' => false,
+    'collapseAll' => true,
     'useSortable' => true,
     'showHeader' => false,
 
@@ -30,10 +30,23 @@ $jsUserFunc = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('jsUserFunc');
 $jsUserFunc->setUserFunc('BERGWERK\\BwrkAddress\\Utility\\BackendButton->addButton');
 $tca->addUserFunc($jsUserFunc);
 
+$map = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('map');
+$map->setUserFunc('BERGWERK\\BwrkAddress\\Utility\\Map->render');
+$map->setParameters(array(
+    'lat' => 'latitude',
+    'lng' => 'longitude',
+));
+$tca->addUserFunc($map);
+
+$tca->addInputField(new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('latitude'));
+$tca->addInputField(new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('longitude'));
+
+
 $tca->addTab('tab_references');
 
 $categories = new \BERGWERK\BwrkUtility\Utility\Tca\Dummy\Column('categories');
 $categories->setSize(20);
 $tca->addSysCategoryReferences($categories);
+
 
 return $tca->createTca();

@@ -19,6 +19,15 @@ class Address extends AbstractModel
     protected $categories;
 
     /**
+     * @var string
+     */
+    protected $latitude = '';
+    /**
+     * @var string
+     */
+    protected $longitude = '';
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -75,4 +84,37 @@ class Address extends AbstractModel
             $this->getCategoryUids()
         );
     }
+
+    /**
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * @param string $latitude
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * @param string $longitude
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    }
+
 }

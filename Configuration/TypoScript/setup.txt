@@ -72,6 +72,12 @@ plugin.tx_bwrkaddress {
             }
         }
     }
+    settings {
+        backend {
+            latitude = 50.139831
+            longitude = 11.580502
+        }
+    }
 }
 
 page.includeCSS.bwrk_address_list = EXT:bwrk_address/Resources/Public/Css/AddressList.css

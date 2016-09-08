@@ -4,6 +4,7 @@ namespace BERGWERK\BwrkAddress\Utility;
 
 use BERGWERK\BwrkAddress\Domain\Model\Address\Entry;
 use BERGWERK\BwrkAddress\Domain\Repository\Address\EntryRepository;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class BackendLabel
@@ -36,6 +37,6 @@ class BackendLabel
                 $parameters['title'] = $typeConfiguration->getLabel() . ': ' . $entry->getReadableValue();
             }
         }
-
+        return $parameters['title'];
     }
 }

@@ -1,0 +1,6 @@
+############################
+### Google Maps API Key ###
+###########################
+
+# cat=basic/enable; type=string; label=LLL:EXT:bwrk_address/Resources/Private/Language/locallang.xlf:extConf.googleMapsKey
+googleMapsKey =

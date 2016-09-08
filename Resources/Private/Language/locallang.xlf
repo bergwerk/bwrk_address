@@ -6,6 +6,11 @@
             <trans-unit id="show_all">
                 <source>Show all</source>
             </trans-unit>
+
+
+            <trans-unit id="extConf.googleMapsKey">
+                <source>Key for Google Maps API</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

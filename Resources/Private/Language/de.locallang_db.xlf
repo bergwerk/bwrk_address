@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2015-12-01T08:36:29Z" product-name="bwrk_address">
+    <file target-language="de" datatype="plaintext" original="messages" date="2015-12-01T08:36:29Z" product-name="bwrk_address">
         <header/>
         <body>
             <trans-unit id="tx_bwrkaddress_domain_model_address">
-                <source>Address</source>
+                <target>Adresse</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.title">
-                <source>Title</source>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.tab_references">
-                <source>References</source>
+                <target>Referenzen</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.categories">
-                <source>Categories</source>
+                <target>Kategorien</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.entries">
-                <source>Entries</source>
+                <target>Einträge</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.map">
-                <source>Map</source>
+                <target>Karte</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.latitude">
-                <source>Latitude</source>
+                <target>Latitude</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.longitude">
-                <source>Longitude</source>
+                <target>Longitude</target>
             </trans-unit>
 
             <trans-unit id="tx_bwrkaddress_domain_model_address.map.noKey">
-                <source><![CDATA[To use the Google Maps geocode card function, you must specify an API key in the extension configuration.<br>more information: <a href="https://developers.google.com/maps/documentation/javascript/get-api-key?hl=de" target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key?hl=de</a>]]></source>
+                <target><![CDATA[Um die Google-Maps Geocode-Kartenfunktion nutzen zu können, müssen Sie in der Extensionkonfiguration einen API-Schlüssel angeben.<br>Weitere Informationen: <a href="https://developers.google.com/maps/documentation/javascript/get-api-key?hl=de" target="_blank">https://developers.google.com/maps/documentation/javascript/get-api-key?hl=de</a>]]></target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address.map.error">
-                <source><![CDATA[To enable geo-card function please fill at least the following field types: Street Address, Zip, City]]></source>
+                <target><![CDATA[Um die Geocode-Kartenfunktion zu aktivieren befüllen Sie bitte mindestens folgende Feld-Typen: Adresse, Postleitzahl, Ort]]></target>
             </trans-unit>
 
 
 
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry">
-                <source>Address Entry</source>
+                <target>Adress-Eintrag</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_type">
-                <source>Type</source>
+                <target>Typ</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_value">
-                <source>Value</source>
+                <target>Wert</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_rte">
-                <source>Text</source>
+                <target>Text</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_fal_images">
-                <source>Images</source>
+                <target>Bilder</target>
             </trans-unit>
             <trans-unit id="tx_bwrkaddress_domain_model_address_entry.entry_fal_files">
-                <source>Files</source>
+                <target>Dateien</target>
             </trans-unit>
 
 
             <trans-unit id="flexform.Pi1.general">
-                <source>General</source>
+                <target>Allgemein</target>
             </trans-unit>
             <trans-unit id="flexform.Pi1.categories">
-                <source>Categories</source>
+                <target>Kategorien</target>
             </trans-unit>
             <trans-unit id="flexform.Pi1.filter">
-                <source>Activate Filter?</source>
+                <target>Filter aktivieren?</target>
             </trans-unit>
 
 
             <trans-unit id="flexform.Pi2.general">
-                <source>General</source>
+                <target>Allgemein</target>
             </trans-unit>
             <trans-unit id="flexform.Pi2.address">
-                <source>Address</source>
+                <target>Adresse</target>
             </trans-unit>
 
 
             <trans-unit id="flexform.Pi4.general">
-                <source>General</source>
+                <target>Allgemein</target>
             </trans-unit>
             <trans-unit id="flexform.Pi4.records">
-                <source>Records</source>
+                <target>Einträge</target>
             </trans-unit>
         </body>
     </file>
