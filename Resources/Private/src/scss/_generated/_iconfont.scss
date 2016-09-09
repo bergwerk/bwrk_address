@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "icon";
+    src: url('../fonts/iconfont/icon.eot');
+    src: url('../fonts/iconfont/icon.eot?#iefix') format('eot'),
+    url('../fonts/iconfont/icon.woff') format('woff'),
+    url('../fonts/iconfont/icon.ttf') format('truetype'),
+    url('../fonts/iconfont/icon.svg#icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family:"icon";
+    display:inline-block;
+    vertical-align:middle;
+    line-height:1;
+    font-weight:normal;
+    font-style:normal;
+    speak:none;
+    text-decoration:inherit;
+    text-transform:none;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.icon--lg {
+                      font-size: 1.3333333333333333em;
+                      line-height: 0.75em;
+                      vertical-align: -15%;
+                  }
+
+.icon--2x { font-size: 2em; }
+.icon--3x { font-size: 3em; }
+.icon--4x { font-size: 4em; }
+.icon--5x { font-size: 5em; }
+.icon--fw {
+                      width: 1.2857142857142858em;
+                      text-align: center;
+                  }
+
+@mixin icon-envelope() {&:before { content: "\EA01" }}
+@mixin icon-phone() {&:before { content: "\EA02" }}
+
+
+@mixin icon-envelope--after() {&:after { content: "\EA01" }}
+@mixin icon-phone--after() {&:after { content: "\EA02" }}
+
+
+.icon-envelope { @include icon-envelope(); }
+.icon-phone { @include icon-phone(); }
+
+
+.icon-envelope--after { @include icon-envelope--after(); }
+.icon-phone--after { @include icon-phone--after(); }

@@ -73,14 +73,13 @@ plugin.tx_bwrkaddress {
         }
     }
     settings {
-        backend {
+        map {
             latitude = 50.139831
             longitude = 11.580502
+            zoom = 10
         }
     }
 }
 
-page.includeCSS.bwrk_address_list = EXT:bwrk_address/Resources/Public/Css/AddressList.css
-
-page.includeJSFooter.bwrk_address_filter = EXT:bwrk_address/Resources/Public/Js/AddressFilter.js
-page.includeJSFooter.bwrk_address_list = EXT:bwrk_address/Resources/Public/Js/AddressList.js
+page.includeCSS.bwrk_address = EXT:bwrk_address/Resources/Public/Css/app.css
+page.includeJSFooter.bwrk_address = EXT:bwrk_address/Resources/Public/Js/app.js

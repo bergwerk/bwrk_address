@@ -82,6 +82,47 @@
             <trans-unit id="flexform.Pi4.records">
                 <source>Records</source>
             </trans-unit>
+
+
+
+            <trans-unit id="flexform.Pi5.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.sort_by">
+                <source>Sort By</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.sort_with">
+                <source>Sorting</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.ascending">
+                <source>Ascending</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.descending">
+                <source>Descending</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.styling">
+                <source>Map Styling</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.render_as_map">
+                <source>Render as map</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map">
+                <source>Map</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.zoom">
+                <source>Zoom</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.latitude">
+                <source>Center Latitude</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.longitude">
+                <source>Center Longitude</source>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

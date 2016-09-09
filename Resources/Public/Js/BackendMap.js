@@ -88,7 +88,12 @@ var MarkerMap = {
                 that.map.setCenter(results[0].geometry.location);
                 that.marker.setPosition(results[0].geometry.location);
             } else {
-                alert("Die Geocodierung hat einen Fehler: " + status);
+                TYPO3.Flashmessage.display(
+                    TYPO3.Severity.error,
+                    'Error',
+                    "Die Geocodierung hat einen Fehler: " + status,
+                    5
+                );
             }
         });
     },

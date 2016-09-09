@@ -28,11 +28,7 @@ class AbstractRepository extends Repository
      */
     public function initializeObject()
     {
-        $defaultQuerySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
 
-        $defaultQuerySettings->setRespectStoragePage(false);
-
-        $this->setDefaultQuerySettings($defaultQuerySettings);
     }
 
     /**

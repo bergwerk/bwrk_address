@@ -3,6 +3,7 @@
 namespace BERGWERK\BwrkAddress\ViewHelpers\Address;
 
 use BERGWERK\BwrkAddress\ViewHelpers\AbstractViewHelper;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class EntryViewHelper extends AbstractViewHelper
 {
@@ -13,6 +14,18 @@ class EntryViewHelper extends AbstractViewHelper
      */
     public function render($address, $entryType)
     {
-        return $address->getEntriesWithType($entryType);
+        if($entryType == 'image')
+        {
+            $falImages = $address->getEntriesWithType('image')->getFirst()->getEntryFalImages();
+            $i=0;
+            foreach($falImages as $falImage)
+            {
+                if($i > 0) break;
+                return $falImage->getUid();
+                $i++;
+            }
+        } else {
+            return $address->getEntriesWithType($entryType)->getFirst()->getEntryValue();
+        }
     }
 }

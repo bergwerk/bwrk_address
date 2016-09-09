@@ -2,6 +2,8 @@
 
 namespace BERGWERK\BwrkAddress\Controller;
 
+use BERGWERK\BwrkAddress\Bootstrap;
+use BERGWERK\BwrkAddress\Domain\Model\Address;
 use BERGWERK\BwrkAddress\Domain\Repository\AddressRepository;
 use BERGWERK\BwrkAddress\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
@@ -26,39 +28,100 @@ class AddressController extends AbstractController
         $this->view->assign('categories', $categories);
     }
 
-    /**
-     *
-     */
-    public function listManualAction()
-    {
-        $records = $this->settings['records'];
-
-        $addresses = AddressRepository::create()->findByUids($records);
-
-        $this->view->assign('addresses', $addresses);
-    }
+//    /**
+//     *
+//     */
+//    public function listManualAction()
+//    {
+//        $records = $this->settings['records'];
+//
+//        $addresses = AddressRepository::create()->findByUids($records);
+//
+//        $this->view->assign('addresses', $addresses);
+//    }
 
     /**
      *
      */
     public function singleAction()
     {
-        $addressUid = (int) $this->settings['address'];
+        $addressUid = (int)$this->settings['address'];
 
         $address = AddressRepository::create()->findByUid($addressUid);
 
         $this->view->assign('address', $address);
     }
 
-    /**
-     * @todo get address uid by url
-     */
-    public function detailAction()
+//    /**
+//     * @todo get address uid by url
+//     */
+//    public function detailAction()
+//    {
+//        $addressUid = (int) 1; // $this->settings['address'];
+//
+//        $address = AddressRepository::create()->findByUid($addressUid);
+//
+//        $this->view->assign('address', $address);
+//    }
+
+    public function listNewAction()
     {
-        $addressUid = (int) 1; // $this->settings['address'];
+        $apiKey = null;
 
-        $address = AddressRepository::create()->findByUid($addressUid);
+        $_extConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][Bootstrap::$_extKey]);
+        if(array_key_exists('googleMapsKey', $_extConfig) && !empty($_extConfig['googleMapsKey'])) $apiKey = $_extConfig['googleMapsKey'];
 
-        $this->view->assign('address', $address);
+
+        $addresses = AddressRepository::create()->findAll();
+
+        $cObj = $this->contentObject->data;
+
+        $settings = $this->settings;
+        $mapStyling = $settings['map']['styling'];
+        if($this->isJson($mapStyling))
+        {
+            $mapStyling = json_decode($mapStyling);
+            $mapStyling = json_encode($mapStyling, JSON_UNESCAPED_SLASHES);
+        }
+        $settings['map']['styling'] = $mapStyling;
+
+        $this->view->assignMultiple(array(
+            'cObj' => $cObj,
+            'pageId' => $GLOBALS['TSFE']->id,
+            'markersJs' => $this->buildMarkerJs($addresses, $cObj),
+            'settings' => $settings,
+            'apiKey' => $apiKey
+        ));
+    }
+
+    private function buildMarkerJs($addresses, $cObj)
+    {
+        $js = '';
+        $js.= 'var bwrkAddressMapMarkers_'.$cObj['uid'].' = [];';
+        /** @var Address $address */
+        $i=0;
+        foreach($addresses as $address)
+        {
+            $js.= '
+            bwrkAddressMapMarkers_'.$cObj['uid'].'['.$i.'] = {
+                title: "'.$address->getTitle().'",
+                position: {lat: '.$address->getLatitude().', lng: '.$address->getLongitude().'},
+                uid: '.$address->getUid().',
+                icon: {
+                  path: google.maps.SymbolPath.CIRCLE,
+                  scale: 4,
+                  fillColor: "#575656",
+                  fillOpacity: 1,
+                  strokeWeight: 0
+                },
+            };';
+            $i++;
+        }
+        return $js;
+    }
+
+    private function isJson($string) {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
     }
 }

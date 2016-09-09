@@ -86,13 +86,14 @@ class Map
         $this->city = null;
         $this->countryCode = 'DE';
 
-        $addressArray = array('street_address', 'zip', 'city', 'country_code');
+        $addressArray = array('street_address', 'zip', 'city', 'country');
 
         if (!empty($PA['row']['entries'])) {
             $entries = array();
             $entryIds = explode(',', $PA['row']['entries']);
             foreach ($entryIds as $entryId) {
                 $entry = EntryRepository::create()->findByUid($entryId);
+                if(is_null($entry)) continue;
                 foreach ($addressArray as $item) {
                     if ($entry->getEntryType()->getKey() == $item) {
                         $entries[$item] = $entry;
@@ -109,8 +110,8 @@ class Map
             if (array_key_exists('city', $entries)) {
                 $this->city = $entries['city']->getEntryValue();
             }
-            if (array_key_exists('country_code', $entries)) {
-                $this->countryCode = $entries['country_code']->getEntryValue();
+            if (array_key_exists('country', $entries)) {
+                $this->countryCode = $entries['country']->getEntryValue();
             }
         }
 
@@ -125,7 +126,7 @@ class Map
             $flashMessage = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
                 'TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
                 \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(self::LLL.'.map.error',Bootstrap::$_extKey),
-                htmlspecialchars('Achtung'),
+                htmlspecialchars('Danger'),
                 \TYPO3\CMS\Core\Messaging\FlashMessage::ERROR,
                 false
             );
