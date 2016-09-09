@@ -28,17 +28,17 @@ class AddressController extends AbstractController
         $this->view->assign('categories', $categories);
     }
 
-//    /**
-//     *
-//     */
-//    public function listManualAction()
-//    {
-//        $records = $this->settings['records'];
-//
-//        $addresses = AddressRepository::create()->findByUids($records);
-//
-//        $this->view->assign('addresses', $addresses);
-//    }
+    /**
+     *
+     */
+    public function listManualAction()
+    {
+        $records = $this->settings['records'];
+
+        $addresses = AddressRepository::create()->findByUids($records);
+
+        $this->view->assign('addresses', $addresses);
+    }
 
     /**
      *
@@ -52,17 +52,17 @@ class AddressController extends AbstractController
         $this->view->assign('address', $address);
     }
 
-//    /**
-//     * @todo get address uid by url
-//     */
-//    public function detailAction()
-//    {
-//        $addressUid = (int) 1; // $this->settings['address'];
-//
-//        $address = AddressRepository::create()->findByUid($addressUid);
-//
-//        $this->view->assign('address', $address);
-//    }
+    /**
+     * @todo get address uid by url
+     */
+    public function detailAction()
+    {
+        $addressUid = (int) 1; // $this->settings['address'];
+
+        $address = AddressRepository::create()->findByUid($addressUid);
+
+        $this->view->assign('address', $address);
+    }
 
     public function listNewAction()
     {
