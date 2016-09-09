@@ -37,16 +37,17 @@ var BwrkAddressMap = {
                 marker_id: element.uid
             });
             tmpMarker.addListener('click', function () {
+                //if(tmpMarker.infoWindow) tmpMarker.infoWindow.close();
                 $.ajax({
                     method: "GET",
                     url: "index.php",
                     data: {
                         'id' : that.pageId,
-                        'eID': 'bwrkMarkerWindow',
-                        'tx_bwrkmarkermap_pi2[uid]': tmpMarker.marker_id
+                        'eID': 'bwrkAddressMarkerWindow',
+                        'tx_bwrkaddress_pi6[uid]': tmpMarker.marker_id
                     }
                 }).done(function (content) {
-                    new google.maps.InfoWindow({
+                    tmpMarker.infoWindow = new google.maps.InfoWindow({
                         content: content
                     }).open(that.map.googleElement, tmpMarker);
                 });

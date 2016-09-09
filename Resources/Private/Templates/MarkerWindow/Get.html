@@ -1,0 +1,14 @@
+{namespace bwrk=BERGWERK\BwrkAddress\ViewHelpers\Address}
+
+<f:if condition="{address}">
+    <div class="tx-bwrkaddress-infowindow">
+        <h3>{address.title}</h3>
+        <p>
+            <bwrk:entry address="{address}" entryType="street_address"/>
+            <br>
+            <bwrk:entry address="{address}" entryType="zip"/>
+            <bwrk:entry address="{address}" entryType="city"/>
+            <br>
+        </p>
+    </div>
+</f:if>

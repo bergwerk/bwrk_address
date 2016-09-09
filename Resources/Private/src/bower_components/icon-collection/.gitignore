@@ -1,7 +1,0 @@
-# Ignore some Stuff
-
-.idea
-.DS_Store
-.zip
-node_modules
-bower_components

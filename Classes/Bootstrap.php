@@ -72,6 +72,10 @@ class Bootstrap
             array('Address' => 'listNew'),
             array('Address' => 'listNew')
         );
+        ExtensionUtility::configurePlugin('BERGWERK.' . self::$_extKey, 'Pi6',
+            array('MarkerWindow' => 'get'),
+            array('MarkerWindow' => 'get')
+        );
     }
 
     /**
