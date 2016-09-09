@@ -66,32 +66,45 @@ class AddressController extends AbstractController
 
     public function listNewAction()
     {
-        $apiKey = null;
-
-        $_extConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][Bootstrap::$_extKey]);
-        if(array_key_exists('googleMapsKey', $_extConfig) && !empty($_extConfig['googleMapsKey'])) $apiKey = $_extConfig['googleMapsKey'];
-
-
-        $addresses = AddressRepository::create()->findAll();
-
-        $cObj = $this->contentObject->data;
-
-        $settings = $this->settings;
-        $mapStyling = $settings['map']['styling'];
-        if($this->isJson($mapStyling))
-        {
-            $mapStyling = json_decode($mapStyling);
-            $mapStyling = json_encode($mapStyling, JSON_UNESCAPED_SLASHES);
-        }
-        $settings['map']['styling'] = $mapStyling;
-
-        $this->view->assignMultiple(array(
-            'cObj' => $cObj,
-            'pageId' => $GLOBALS['TSFE']->id,
-            'markersJs' => $this->buildMarkerJs($addresses, $cObj),
-            'settings' => $settings,
-            'apiKey' => $apiKey
+        $this->cacheUtility->setCacheIdentifier(array(
+            'pid' => $GLOBALS['TSFE']->id,
         ));
+
+        $html = $this->cacheUtility->getCache();
+        if(!$html)
+        {
+            $apiKey = null;
+
+            $_extConfig = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][Bootstrap::$_extKey]);
+            if(array_key_exists('googleMapsKey', $_extConfig) && !empty($_extConfig['googleMapsKey'])) $apiKey = $_extConfig['googleMapsKey'];
+
+            $addresses = AddressRepository::create()->findAll();
+
+            $cObj = $this->contentObject->data;
+
+
+            $settings = $this->settings;
+            $mapStyling = $settings['map']['styling'];
+            if($this->isJson($mapStyling))
+            {
+                $mapStyling = json_decode($mapStyling);
+                $mapStyling = json_encode($mapStyling, JSON_UNESCAPED_SLASHES);
+            }
+            $settings['map']['styling'] = $mapStyling;
+
+            $this->view->assignMultiple(array(
+                'cObj' => $cObj,
+                'pageId' => $GLOBALS['TSFE']->id,
+                'markersJs' => $this->buildMarkerJs($addresses, $cObj),
+                'settings' => $settings,
+                'apiKey' => $apiKey
+            ));
+
+            $html = $this->view->render();
+            $this->cacheUtility->setCache($html);
+        }
+
+        return $html;
     }
 
     private function buildMarkerJs($addresses, $cObj)
