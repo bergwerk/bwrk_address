@@ -103,9 +103,6 @@
             <trans-unit id="flexform.Pi5.descending">
                 <source>Descending</source>
             </trans-unit>
-            <trans-unit id="flexform.Pi5.map.styling">
-                <source>Map Styling</source>
-            </trans-unit>
             <trans-unit id="flexform.Pi5.render_as_map">
                 <source>Render as map</source>
             </trans-unit>
@@ -120,6 +117,12 @@
             </trans-unit>
             <trans-unit id="flexform.Pi5.map.longitude">
                 <source>Center Longitude</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.marker.styling">
+                <source>Marker Styling</source>
+            </trans-unit>
+            <trans-unit id="flexform.Pi5.map.styling">
+                <source>Map Styling</source>
             </trans-unit>
 
 

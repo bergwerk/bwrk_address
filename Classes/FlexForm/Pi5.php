@@ -62,6 +62,8 @@ class Pi5 extends FlexForm
         $renderAsMap = new Column('render_as_map');
         $renderAsMap->setOnChange();
 
+        $markerStyling = new Column('map.marker.styling');
+        $markerStyling->setDisplayCond('FIELD:settings.render_as_map:=:1');
 
         $zoom = new Column('map.zoom');
         $zoom->setDisplayCond('FIELD:settings.render_as_map:=:1');
@@ -84,7 +86,8 @@ class Pi5 extends FlexForm
             $this->addInputField($zoom),
             $this->addInputField($defaultLat),
             $this->addInputField($defaultLng),
-            $this->addTextField($mapStyling)
+            $this->addTextField($mapStyling),
+            $this->addTextField($markerStyling)
         ));
 
         $xml = $this->renderFlexForm();

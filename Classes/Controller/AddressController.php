@@ -106,15 +106,12 @@ class AddressController extends AbstractController
             bwrkAddressMapMarkers_'.$cObj['uid'].'['.$i.'] = {
                 title: "'.$address->getTitle().'",
                 position: {lat: '.$address->getLatitude().', lng: '.$address->getLongitude().'},
-                uid: '.$address->getUid().',
-                icon: {
-                  path: google.maps.SymbolPath.CIRCLE,
-                  scale: 4,
-                  fillColor: "#575656",
-                  fillOpacity: 1,
-                  strokeWeight: 0
-                },
-            };';
+                uid: '.$address->getUid().',';
+            if(!empty($this->settings['map']['marker']['styling']))
+            {
+                $js.= 'icon: '.$this->settings['map']['marker']['styling'];
+            }
+            $js.= '};';
             $i++;
         }
         return $js;
