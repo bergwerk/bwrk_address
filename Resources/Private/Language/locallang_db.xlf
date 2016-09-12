@@ -124,6 +124,9 @@
             <trans-unit id="flexform.Pi5.map.styling">
                 <source>Map Styling</source>
             </trans-unit>
+            <trans-unit id="flexform.Pi5.map.marker.center">
+                <source>Center map by click on marker relative to marker position</source>
+            </trans-unit>
 
 
         </body>
