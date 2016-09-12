@@ -18,6 +18,7 @@ $entries->setAppearance(array(
     'collapseAll' => true,
     'useSortable' => true,
     'showHeader' => false,
+    'showPossibleLocalizationRecords' => true,
 
     'enabledControls' => array(
         'sort' => false,
