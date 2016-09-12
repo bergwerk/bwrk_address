@@ -40,6 +40,13 @@ var BwrkAddressMap = {
             });
             tmpMarker.addListener('click', function () {
                 //if(tmpMarker.infoWindow) tmpMarker.infoWindow.close();
+
+				/**
+				 * @todo: wrap setCenter in a if condition which is set as a data attribute from an option in the backend
+                 */
+
+                that.map.googleElement.setCenter(tmpMarker.getPosition());
+
                 $.ajax({
                     method: "GET",
                     url: "index.php",
