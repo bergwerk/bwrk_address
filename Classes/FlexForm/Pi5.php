@@ -69,6 +69,9 @@ class Pi5 extends FlexForm
         $zoom->setDisplayCond('FIELD:settings.render_as_map:=:1');
         $zoom->setDefault('10');
 
+        $centerMapByMarker = new Column('map.marker.center');
+        $centerMapByMarker->setDefault(false);
+
         $defaultLat = new Column('map.latitude');
         $defaultLat->setDisplayCond('FIELD:settings.render_as_map:=:1');
         $defaultLat->setDefault('50.1397337');
@@ -84,6 +87,7 @@ class Pi5 extends FlexForm
         $this->addSheet('map', array(
             $this->addCheckField($renderAsMap),
             $this->addInputField($zoom),
+            $this->addCheckField($centerMapByMarker),
             $this->addInputField($defaultLat),
             $this->addInputField($defaultLng),
             $this->addTextField($mapStyling),
