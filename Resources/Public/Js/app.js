@@ -30,6 +30,9 @@ var BwrkAddressMap = {
         this.searchBox = $('#' + this.map.id).parent('.tx-bwrk-markermap').find('.tx-bwrk-markermap__searchbox');
 
         var that = this;
+
+        var infowindow;
+
         this.markers.forEach(function (element, index) {
             var tmpMarker = new google.maps.Marker({
                 position: element.position,
@@ -38,8 +41,12 @@ var BwrkAddressMap = {
                 icon: element.icon,
                 marker_id: element.uid
             });
-            tmpMarker.addListener('click', function () {
-                //if(tmpMarker.infoWindow) tmpMarker.infoWindow.close();
+
+            google.maps.event.addListener(tmpMarker, 'click', (function(){
+                if (infowindow) {
+                    infowindow.close();
+                }
+
                 $.ajax({
                     method: "GET",
                     url: "index.php",
@@ -49,11 +56,13 @@ var BwrkAddressMap = {
                         'tx_bwrkaddress_pi6[uid]': tmpMarker.marker_id
                     }
                 }).done(function (content) {
-                    tmpMarker.infoWindow = new google.maps.InfoWindow({
-                        content: content
-                    }).open(that.map.googleElement, tmpMarker);
+                    infowindow = new google.maps.InfoWindow({
+                       content: content
+                    });
+
+                    infowindow.open(that.map.googleElement, tmpMarker);
                 });
-            });
+            }));
         });
 
         this.searchBox.find('form').submit(function () {
