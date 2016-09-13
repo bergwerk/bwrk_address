@@ -30,6 +30,7 @@ var BwrkAddressMap = {
         this.searchBox = $('#' + this.map.id).parent('.tx-bwrk-markermap').find('.tx-bwrk-markermap__searchbox');
 
         var that = this;
+
         this.markers.forEach(function (element, index) {
             var tmpMarker = new google.maps.Marker({
                 position: element.position,
@@ -39,13 +40,9 @@ var BwrkAddressMap = {
                 marker_id: element.uid
             });
             tmpMarker.addListener('click', function () {
-                //if(tmpMarker.infoWindow) tmpMarker.infoWindow.close();
-
-				/**
-				 * @todo: wrap setCenter in a if condition which is set as a data attribute from an option in the backend
-                 */
-
-                that.map.googleElement.setCenter(tmpMarker.getPosition());
+                if (that.centerMapByClickOnMarker(mapDiv) == true) {
+                    that.map.googleElement.setCenter(tmpMarker.getPosition());
+                }
 
                 $.ajax({
                     method: "GET",
@@ -135,6 +132,17 @@ var BwrkAddressMap = {
             bounds.extend(markers[i].getPosition());
         }
         this.map.googleElement.fitBounds(bounds);
+    },
+
+    centerMapByClickOnMarker: function centerMapByClickOnMarker(map) {
+        var checkIfTrue = map.getAttribute('data-center-by-marker');
+
+        if (checkIfTrue == 'true') {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 };
 //# sourceMappingURL=app.js.map
